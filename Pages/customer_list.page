@@ -54,7 +54,7 @@
 						"FooterVisible": false
 					},
 					"ChartContent": {
-						"Title": "Empleados Por Ciudad",
+						"Title": "Empleados por Ciudad",
 						"StatusText": "8h ago",
 						"IsReadOnly": false,
 						"ChartView": {
@@ -65,9 +65,26 @@
 							"SeriesColor": [
 								"#5899DA"
 							],
-							"Data": "{Address/City}",
-							"CategoryTitles": "{Address/City}",
-							"CategoryAxisTitle": "Empleados Por Ciudad",
+							"Data": [
+								[
+									431000,
+									494000,
+									491000,
+									536000,
+									675000,
+									680000
+								]
+							],
+							"CategoryTitles": [
+								"C1",
+								"C2",
+								"C3",
+								"C4",
+								"C5",
+								"C6"
+							],
+							"CategoryAxisTitle": "Category Axis Title",
+							"ValueAxisTitle": "Value Axis Title",
 							"TrendItems": [
 								{
 									"TrendTitle": "100%",
@@ -80,18 +97,18 @@
 								"Sales for S1"
 							],
 							"AggregateItem": {
-								"Title": "Cantidad De Empleados",
+								"Title": "Empleados",
+								"TrendTitle": "100%",
+								"TrendImage": "res://arrow_up.png",
 								"Value": {
+									"LeadingUnit": "$",
+									"TrailingUnit": "k",
 									"Function": "SUM",
 									"Metrics": [
 										"3307"
 									]
 								}
 							}
-						},
-						"Target": {
-							"Service": "/app3/Services/SampleServiceV2.service",
-							"EntitySet": "Customers"
 						}
 					},
 					"_Type": "Section.Type.ChartContent",
