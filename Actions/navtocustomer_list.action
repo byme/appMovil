@@ -1,0 +1,5 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"PageToOpen": "/app3/Pages/customer_list.page",
+	"NavigationType": "Inner"
+}

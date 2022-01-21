@@ -1,0 +1,107 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.ContactCell",
+					"Target": {
+						"Service": "/app3/Services/SampleServiceV2.service",
+						"EntitySet": "Customers",
+						"QueryOptions": "$orderby=LastName desc"
+					},
+					"_Name": "SectionContactCell0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"ContactCell": {
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true,
+							"Items": [
+							]
+						},
+						"DetailImage": "res://contact.png",
+						"Headline": "{LastName}",
+						"Subheadline": "{FirstName}",
+						"Description": "{City}",
+						"OnPress": "/app3/Actions/navtocustomer_detail.action",
+						"ActivityItems": [
+							{
+								"_Name": "SectionContactCell0ActivityItems0",
+								"ActivityType": "Phone",
+								"ActivityValue": "{PhoneNumber}"
+							},
+							{
+								"_Name": "SectionContactCell0ActivityItems1",
+								"ActivityType": "Email",
+								"ActivityValue": "{EmailAddress}"
+							}
+						]
+					},
+					"Search": {
+						"Enabled": true,
+						"BarcodeScanner": true
+					}
+				},
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ChartContent": {
+						"Title": "Empleados Por Ciudad",
+						"StatusText": "8h ago",
+						"IsReadOnly": false,
+						"ChartView": {
+							"ChartType": "Column",
+							"SeriesTitles": [
+								"S1"
+							],
+							"SeriesColor": [
+								"#5899DA"
+							],
+							"Data": "{Address/City}",
+							"CategoryTitles": "{Address/City}",
+							"CategoryAxisTitle": "Empleados Por Ciudad",
+							"TrendItems": [
+								{
+									"TrendTitle": "100%",
+									"TrendImage": "res://arrow_up.png"
+								}
+							]
+						},
+						"SummaryView": {
+							"SeriesTitles": [
+								"Sales for S1"
+							],
+							"AggregateItem": {
+								"Title": "Cantidad De Empleados",
+								"Value": {
+									"Function": "SUM",
+									"Metrics": [
+										"3307"
+									]
+								}
+							}
+						},
+						"Target": {
+							"Service": "/app3/Services/SampleServiceV2.service",
+							"EntitySet": "Customers"
+						}
+					},
+					"_Type": "Section.Type.ChartContent",
+					"_Name": "SectionChartContent0",
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "customer_list",
+	"Caption": "Empleados"
+}

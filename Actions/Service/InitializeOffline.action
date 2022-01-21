@@ -1,0 +1,29 @@
+{
+    "Service": "/app3/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+            "Name": "Customers",
+            "Query": "Customers"
+        },
+        {
+            "Name": "Products",
+            "Query": "Products",
+            "AutomaticallyRetrievesStreams": true
+        },
+        {
+            "Name": "SalesOrderHeaders",
+            "Query": "SalesOrderHeaders"
+        },
+        {
+            "Name": "SalesOrderItems",
+            "Query": "SalesOrderItems"
+        }
+    ],
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText": "Downloading...",
+    "ActionResult": {
+        "_Name": "init"
+    },
+    "OnSuccess": "/app3/Actions/Service/InitializeOfflineSuccessMessage.action",
+    "OnFailure": "/app3/Actions/Service/InitializeOfflineFailureMessage.action"
+}
